@@ -1,26 +1,50 @@
-# Ember-data-arcgis-opendata
+# Ember-Data ArcGIS OpenData
 
-This README outlines the details of collaborating on this Ember addon.
+Ember Data model and adapters for the (ArcGIS OpenData API)[https://opendata.arcgis.com/api/v2]
 
-## Installation
+## Notes
+This is beta software. The intention of this addon is to enable an application to work with the ArcGIS Open Data api. It is being built incrementally, and does not currently encompass the entire API.
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+## Usage
 
-## Running
+Create a project using ember-cli. If you have an existing ember-cli project, skip this step.
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+```
+$ ember new my-new-app
+```
 
-## Running Tests
+Add Torii, the ArcGIS torii provider and this addon to the project
 
-* `npm test` (Runs `ember try:testall` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
+```
+$ ember install torii
+$ ember install torii-provider-arcgis
+$ ember install ember-data-arcgis-opendata
+```
 
-## Building
+Now edit `/config/environment.js` to add your Torii provider configuration.
 
-* `ember build`
+```
+module.exports = function(environment) {
+  var ENV = {
 
-For more information on using ember-cli, visit [http://ember-cli.com/](http://ember-cli.com/).
+   // ... other ENV config stuff here
+
+   torii:{
+      sessionServiceName: 'session',
+      providers: {
+        'arcgis-oauth-bearer': {
+          apiKey: 'APP CLIENT ID GOES HERE',
+          portalUrl: 'https://someportal.com' //optional - defaults to https://arcgis.com
+        }
+      }
+    }
+  };
+
+  return ENV;
+};
+```
+
+The application will now have access to the following models:
+- page
+
+The model will automatically be available to the Ember Data store in the consuming application. Please see the [Ember Guides](https://guides.emberjs.com/v2.4.0/models/) for details on how to [find records](https://guides.emberjs.com/v2.4.0/models/finding-records/) or [other operations](https://guides.emberjs.com/v2.4.0/models/creating-updating-and-deleting-records/).

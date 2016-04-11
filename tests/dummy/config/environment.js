@@ -16,6 +16,16 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      API:'https://opendatadev.arcgis.com',
+      portalBaseUrl: 'https://www.arcgis.com'
+    },
+    torii: {
+      sessionServiceName: 'session',
+      providers: {
+        'arcgis-oauth-bearer': {
+          apiKey: 'YrDUvBZafEwHunC0'
+        }
+      }
     }
   };
 

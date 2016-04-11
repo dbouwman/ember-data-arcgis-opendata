@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+		<div class="col-md-12">
+		  <div class="page-header">
+		    <h2>Pages
+          {{#if session.isAuthenticated}}
+          {{#link-to 'pages.create' class="btn btn-warning btn-lrg pull-right"}}Create New Page{{/link-to}}
+          {{else}}
+          {{link-to 'Sign In to Create/Edit' 'signin'  class="btn btn-primary btn-lrg pull-right"}}
+          {{/if}}
+		    </h2>
+        <p>A page represents a user-configurable set of components which will rendere
+        into a page within an application "container". </p>
+
+		  </div>
+	  </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <td>Name</td>
+            <td>Updated</td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each model as |page|}}
+            <tr>
+              <td>{{page.title}}</td>
+              <td>{{page.updatedAt}}</td>
+              <td>
+                {{#if session.isAuthenticated}}
+                <button {{action 'delete' page.id}} class="btn btn-default btn-sm pull-right"> Delete</button>
+                {{#link-to 'pages.edit' page class="btn btn-default btn-sm pull-right" data-toggle="tooltip" data-placement="top" title="Settings" arial-label="Settings"}}Edit{{/link-to}}
+                {{/if}}
+                {{#link-to 'pages.page' page class="btn btn-default btn-sm pull-right" data-toggle="tooltip" data-placement="top" title="Settings" arial-label="Settings"}}View{{/link-to}}
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
