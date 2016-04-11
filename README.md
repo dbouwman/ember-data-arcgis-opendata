@@ -1,9 +1,9 @@
 # Ember-Data ArcGIS OpenData
 
-Ember Data model and adapters for the (ArcGIS OpenData API)[https://opendata.arcgis.com/api/v2]
+Ember Data model and adapters for the [ArcGIS OpenData API](https://opendata.arcgis.com/api/v2)
 
 ## Notes
-This is beta software. The intention of this addon is to enable an application to work with the ArcGIS Open Data api. It is being built incrementally, and does not currently encompass the entire API.
+This is beta software. The intention of this add-on is to enable an application to work with the ArcGIS Open Data api. It is being built incrementally, and does not currently encompass the entire API.
 
 ## Usage
 
@@ -13,7 +13,7 @@ Create a project using ember-cli. If you have an existing ember-cli project, ski
 $ ember new my-new-app
 ```
 
-Add Torii, the ArcGIS torii provider and this addon to the project
+Add Torii, the ArcGIS torii provider and this add-on to the project
 
 ```
 $ ember install torii
@@ -34,7 +34,7 @@ module.exports = function(environment) {
       providers: {
         'arcgis-oauth-bearer': {
           apiKey: 'APP CLIENT ID GOES HERE',
-          portalUrl: 'https://someportal.com' //optional - defaults to https://arcgis.com
+          portalUrl: 'https://someportal.com' //optional - defaults to https://www.arcgis.com
         }
       }
     }
@@ -45,6 +45,7 @@ module.exports = function(environment) {
 ```
 
 The application will now have access to the following models:
-- page
+
+- [Page](https://github.com/ArcGIS/ember-data-arcgis-opendata/blob/master/addon/models/page.js)
 
 The model will automatically be available to the Ember Data store in the consuming application. Please see the [Ember Guides](https://guides.emberjs.com/v2.4.0/models/) for details on how to [find records](https://guides.emberjs.com/v2.4.0/models/finding-records/) or [other operations](https://guides.emberjs.com/v2.4.0/models/creating-updating-and-deleting-records/).
