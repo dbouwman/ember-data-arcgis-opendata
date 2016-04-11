@@ -1,7 +1,7 @@
 {
   "name": "ember-data-arcgis-opendata",
   "version": "0.0.1",
-  "description": "The default blueprint for ember-cli addons.",
+  "description": "Ember Data model and adapters for the ArcGIS OpenData API",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -15,7 +15,7 @@
   "engines": {
     "node": ">= 0.10.0"
   },
-  "author": "",
+  "author": "Dave Bouwman <dbouwman@esri.com>",
   "license": "MIT",
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.2",
@@ -43,7 +43,10 @@
     "torii-provider-arcgis": "0.1.1"
   },
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "arcgis",
+    "esri",
+    "opendata"
   ],
   "dependencies": {
     "ember-cli-babel": "^5.1.6"
