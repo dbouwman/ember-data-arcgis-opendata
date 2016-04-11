@@ -1,6 +1,6 @@
 {
   "name": "ember-data-arcgis-opendata",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Ember Data model and adapters for the ArcGIS OpenData API",
   "directories": {
     "doc": "doc",
