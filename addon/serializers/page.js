@@ -25,7 +25,7 @@ export default DS.JSONAPISerializer.extend({
      */
     _mapObject: function(page){
 
-      if(typeof page.attributes.body ==='object'){
+      if(typeof page.attributes.body === 'object'){
         page.attributes = page.attributes.body;
         delete page.attributes.body;
         if(!page.attributes.updatedAt){
@@ -37,20 +37,27 @@ export default DS.JSONAPISerializer.extend({
     },
 
     /**
+     * Ensure that we are speaking camelCase
+     */
+    keyForAttribute: function(attr) {
+      console.log('KeyForAttribute: ' + attr);
+      return Ember.String.camelize(attr);
+    }
+
+    /**
      * Re-Convert the draft and cards objects into strings
      */
-    serializeIntoHash (hash, typeClass, snapshot/*, options*/){
-      //debugger;
-      let attrs = snapshot.attributes();
-      //build the main structure
-      hash.data= {
-        type: typeClass.modelName,
-        id: snapshot.id,
-        attributes: {
-          body:attrs
-        }
-      };
-
-    }
+    // serializeIntoHash (hash, typeClass, snapshot/*, options*/){
+    //   //debugger;
+    //   let attrs = snapshot.attributes();
+    //   //build the main structure
+    //   hash.data= {
+    //     type: typeClass.modelName,
+    //     id: snapshot.id,
+    //     attributes: {
+    //       body:attrs
+    //     }
+    //   };
+    // }
 
 });
