@@ -16,7 +16,7 @@ export default Ember.Route.extend({
     let model = {
       public:false,
       updatedAt: new Date().toISOString,
-      updatedBy: user.fullName,
+      ownerName: user.fullName,
       owner: user.username,
       title: 'Some Random Page Title',
       affiliation: portal.name,

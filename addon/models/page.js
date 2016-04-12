@@ -8,6 +8,7 @@
  export default DS.Model.extend({
    title: DS.attr('string'),
    description: DS.attr('string'),
+   lead: DS.attr('string'),
    public: DS.attr('boolean'),
    uiVersion:  DS.attr('number'),
    owner: DS.attr('string'),
