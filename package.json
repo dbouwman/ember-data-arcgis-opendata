@@ -40,7 +40,7 @@
     "ember-try": "^0.2.2",
     "loader.js": "^4.0.1",
     "torii": "0.7.0-beta.4",
-    "torii-provider-arcgis": "0.1.1"
+    "torii-provider-arcgis": "0.1.2"
   },
   "keywords": [
     "ember-addon",
