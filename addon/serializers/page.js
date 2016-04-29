@@ -33,6 +33,23 @@ export default DS.JSONAPISerializer.extend({
         }
       }
 
+      // normalize row data
+      // add cards under rows
+      if (!page.attributes.rows || page.attributes.rows.length === 0) {
+        page.attributes.rows = [{
+          cards: page.attributes.cards,
+          style: {}
+        }];
+      }
+      // no longer using top level cards, should be in first row
+      delete page.attributes.cards;
+      // make sure each row has a style
+      page.attributes.rows.forEach(row => {
+        if (!row.style) {
+          row.style = {};
+        }
+      });
+
       return page;
     },
 
