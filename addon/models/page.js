@@ -15,5 +15,5 @@
    ownerName: DS.attr('string'),
    updatedAt: DS.attr('date'),
    affiliation: DS.attr('string'),
-   cards: DS.attr() //array of card objects
+   rows: DS.attr() //array of row objects
  });
