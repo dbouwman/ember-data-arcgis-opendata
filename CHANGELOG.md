@@ -2,10 +2,15 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.0.4]
+## [1.1]
+### Changed
+- return page rows as Ember.Array
+
+## [0.1.0]
+### Added
+- page model exposes rows, not cards
 ### Changed
 - normalize page row data on fetch
-- page model exposes rows, not cards
 
 ## [0.0.2]
 ### Changed
