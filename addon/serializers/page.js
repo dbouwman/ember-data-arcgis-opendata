@@ -41,6 +41,13 @@ export default DS.JSONAPISerializer.extend({
           style: {}
         }];
       }
+
+      // NOTE: not able to observe rows unless coerce into Ember.Array here
+      // if need to do this for other attributes,
+      // we should considering writing a transform like:
+      // http://stackoverflow.com/a/19557708/656010
+      page.attributes.rows = Ember.A(page.attributes.rows);
+
       // no longer using top level cards, should be in first row
       delete page.attributes.cards;
       // make sure each row has a style
